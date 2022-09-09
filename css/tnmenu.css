@@ -1,0 +1,269 @@
+/* .Tsub = sub-menu
+.hsubT = has-sub
+*/
+
+.sidebar {
+	width: 100%;
+	float: right;
+}
+
+.r-menuT {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #105d39;/*dark green*/
+    float:right;
+    width:100%;
+    font-family: 'Roboto', sans-serif;
+}
+.r-menuT > ul.sub { float: right; }
+.r-menuT li { list-style: none; }
+.r-menuT li ul.sub { display:none; }
+.r-menuT > li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    float: right;
+}
+.r-menuT li a { color:#ffcd5a; }
+
+/* box surrounding letters in menu */
+.r-menuT > li > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0px;
+    padding: 12px 50px 12px 50px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffcd5a;
+}
+
+.r-menuT li.menu-active > a {
+    background: #24b089; /*light green*/
+    color:#105d39;/*dark green*/
+}
+.r-menuT li.menu-active { position: relative; }
+.r-menuT > li > a > .arrow:before {  
+    margin-left: 15px;
+    display: inline;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: " \276F";
+    font-weight: 300;
+    text-shadow: none;
+    width: 10px;
+    display: inline-block;
+	transform: rotate(90deg);
+	
+}
+
+.r-menuT li.hsubT ul.sub li > a > .arrow:before {
+    content: "\f105" !important;
+}
+.r-menuT > li.hsubT > ul.sub {
+    display: none;
+    list-style: none;
+    clear: both;
+    margin: 0;
+   /* position: absolute;*/
+    z-index: 999;
+	float: right;
+}
+.r-menuT li.hsubT ul.sub {
+	background: #4c856b; /*med green*/
+	border-bottom: 0.5px solid #fee5ac; /*light yellow*/
+}
+.r-menuT li.hsubT ul.sub > li {
+	width: 185px;
+	}
+.r-menuT li.hsubT ul.sub li a {
+    display: block;
+    margin: 0px 0px;
+    padding: 12px 20px 12px 15px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: normal;
+    background: none;
+}
+.r-menuT > li.hsubT > ul.sub > li {
+	position: relative;
+	border-bottom: 1px solid #c3a61d; /*dark gold*/
+}
+.r-menuT > li.hsubT > ul.sub > li.hsubT ul.sub {
+    position: absolute;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+.r-menuT > li.hsubT > ul.sub > li.hsubT ul.sub > li.hsubT ul.sub {
+    position: absolute;
+    right: 185px;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+.r-menuT > li.hsubT > ul.sub li > a > .arrow:before {
+    float: right;
+    margin-top: 1px;
+    margin-right: 0px;
+    display: inline;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+    text-shadow: none;
+}
+
+/* Menu Toggle Btn
+----------------------------------------*/
+.mtogT {
+    display: none;
+    float: right;
+    width: 100%;
+    background: #105d39;/*dark green*/
+	border: 2px solid #c3a61d; /*dark gold*/
+	border-radius: 5px;
+}
+.mtogT h3 {
+    float: left;
+    color: #c3a61d; /*dark gold*/
+    padding: 0px 10px;
+    font-weight: 600;
+    font-size: 16px;
+	margin-left: 110px;
+}
+.mtogT .icon-bar {
+    display: block !important;
+    width: 15px;
+    height: 2px;
+    background-color: #F5F5F5 !important;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(16,93,57,0.25);
+    -moz-box-shadow: 0 1px 0 rgba(16,93,57, 0.25);
+    box-shadow: 0 1px 0 rgba(16,93,57, 0.25);
+    margin: 3px;
+}
+.mtogT .icon-bar:hover {
+    background-color: #24b089 /*light green*/ !important;
+}
+.mtogT #menu-btn {
+    float: right;
+    background: #105d39;/*dark green*/
+    border: 1px solid #c3a61d; /*dark gold*/
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+.hide-menu { display: none; }
+
+
+/* Accordion Menu Styles
+----------------------------------------*/
+
+ul[data-menu-style="accordion"] { width: 180px; }
+ul[data-menu-style="accordion"] > li {    
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    float: none !important;
+}
+ul[data-menu-style="accordion"] > li:first-child {
+    border-top: 2px solid #fee5ac; /*light yellow*/ }
+ul[data-menu-style="accordion"] li.hsubT ul.sub > li {
+    width: 100%; }
+ul[data-menu-style="accordion"] > li.hsubT > a > .arrow:before {
+    float: right;
+    content: "\f105"; }
+ul[data-menu-style="accordion"] li.menu-active > a > .arrow:before {
+    content: "\f107" !important; }
+ul[data-menu-style="accordion"] > li.hsubT > ul.sub {
+    position: static; }
+ul[data-menu-style="accordion"] > li.hsubT > ul.sub > li ul.sub {
+    position: static; }
+ul[data-menu-style="accordion"] > li.hsubT > ul.sub > li ul.sub > li ul.sub { position: static; }
+ul[data-menu-style="accordion"] > li { border-bottom: 1px solid #242424; }
+ul[data-menu-style="accordion"] li a:hover {
+    background: #24b089 /*light green*/ !important; }
+ul[data-menu-style="accordion"] li.hsubT li.menu-active > a > .arrow:before { content: "\f107" !important; }
+
+
+
+/* Responsive Menu Styles
+----------------------------------------*/
+/*Note: change the max-width asper your requirment and change the same in aceResponsiveMenu({resizeWidth: "768" }) function*/
+
+@media screen and (max-width: 768px) {
+    ul[data-menu-style="accordion"] li.hsubT ul.sub {
+        width: 100% !important;
+    } 
+    nav.sidebar {width: auto;}
+	
+	
+	.r-menuT {
+        float: right;
+        width:100%;
+    }
+    .r-menuT > li {
+        border-bottom: 1px solid #fee5ac; /*light yellow*/
+       float: none;
+    }   
+    .r-menuT li a:hover {
+        background: #4c856b /*med green*/ !important;
+    }
+    .r-menuT > li:first-child {
+        border-top: 2px solid #c3a61d; /*dark gold*/
+    }   
+	.r-menuT  li.hsubT ul.sub > li:first-child {
+        border-top: 2px solid #c3a61d; /*dark gold*/
+    }  
+	.r-menuT  li.hsubT > ul.sub > li {
+        border-bottom: 1px solid #c3a61d; /*dark gold*/
+		width: 100%;
+    } 
+	.r-menuT li.hsubT ul.sub li{width:100%;}
+    .r-menuT > li > a > .arrow:before {
+        float: right;
+         content: " \276F";
+		text-shadow: none;
+		width: 10px;
+		display: inline-block;
+		transform: rotate(90deg);
+    }
+    li.menu-active > a > .arrow:before {
+		content: " \276F";
+		font-weight: 300;
+		text-shadow: none;
+		width: 10px;
+		display: inline-block;
+		transform: rotate(90deg);
+    }
+    .r-menuT li.hsubT ul.sub > li { width: 100%; }
+	.r-menuT > li.hsubT > ul.sub > li {
+		 width: 190px;
+		 
+	}
+    .r-menuT li.hsubT ul.sub li.hsubT ul li a { padding-right: 30px; }  
+    .r-menuT li.hsubT ul.sub li.hsubT ul li.hsubT ul li a 
+       { padding-right: 50px; }  
+    /*.r-menuT > li.hsubT > ul.sub > li ul.hsubT { position: static; }*/
+    .r-menuT > li.hsubT > ul.sub > li.hsubT ul > li.hsubT ul {
+        position: static;
+    }
+    .r-menuT li.hsubT ul.sub li.menu-active > a > .arrow:before {
+		content: " \276F";
+		font-weight: 300;
+		text-shadow: none;
+		width: 10px;
+		display: inline-block;
+		transform: rotate(90deg);
+    }
+} 
+ 
